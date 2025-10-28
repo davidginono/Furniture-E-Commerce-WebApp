@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       port: 5174,
-      allowedHosts: ['914582c28be6.ngrok-free.app'],
+      allowedHosts: ['b64514f1880e.ngrok-free.app'],
       proxy: {
         '/api': {
           target: apiBaseUrl,

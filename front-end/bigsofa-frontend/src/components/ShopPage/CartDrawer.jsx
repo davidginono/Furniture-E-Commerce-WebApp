@@ -53,7 +53,16 @@ function CartDrawer({
       open={open}
       destroyOnClose
     >
-      {items.length === 0 ? (
+      {successMessage ? (
+        <div style={{ textAlign: 'center', marginTop: 40 }}>
+          <Alert
+            type="success"
+            message={successMessage}
+            showIcon
+            description="You can continue shopping or close this drawer."
+          />
+        </div>
+      ) : items.length === 0 ? (
         <Empty description="Your cart is empty">
           <Button type="primary" onClick={onClose}>
             Continue shopping
@@ -73,8 +82,13 @@ function CartDrawer({
                     <Text>Qty:</Text>
                     <InputNumber
                       min={1}
+                      step={1}
+                      precision={0}
+                      controls={false}
+                      inputMode="numeric"
+                      parser={(value) => (value ? value.replace(/[^\d]/g, '') : '')}
                       value={item.quantity}
-                      onChange={(value) => onUpdateQuantity(item.id, value)}
+                      onChange={(value) => onUpdateQuantity(item.id, value ?? item.quantity)}
                       size="small"
                     />
                   </Space>,
@@ -147,8 +161,6 @@ function CartDrawer({
           </Form>
 
           {error ? <Alert type="error" message={error} showIcon style={{ marginTop: 16 }} /> : null}
-          {successMessage ? <Alert type="success" message={successMessage} showIcon style={{ marginTop: 16 }} /> : null}
-
           <Button
             type="primary"
             block
