@@ -46,6 +46,11 @@ function DashboardPage({ token, onLogout }) {
   }, [location.state, categories, form, navigate])
 
   const authHeaders = useMemo(() => (token ? { 'X-Admin-Token': token } : {}), [token])
+  const apiBaseUrl = useMemo(
+    () => (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, ''),
+    [],
+  )
+  const resolveImageUrl = (value) => (value?.startsWith('http') ? value : `${apiBaseUrl}${value}`)
 
   async function loadCategories() {
     try {
@@ -148,7 +153,7 @@ function DashboardPage({ token, onLogout }) {
       title: 'Preview',
       dataIndex: 'imageUrl',
       key: 'imageUrl',
-      render: (value, record) => <Image width={80} src={record.imageUrl} />, onCell: () => ({ style: { minWidth: 120 } }),
+      render: (value, record) => <Image width={80} src={resolveImageUrl(record.imageUrl)} />, onCell: () => ({ style: { minWidth: 120 } }),
     },
     { title: 'Name', dataIndex: 'name', key: 'name' },
     { title: 'Category', dataIndex: 'category', key: 'category' },
