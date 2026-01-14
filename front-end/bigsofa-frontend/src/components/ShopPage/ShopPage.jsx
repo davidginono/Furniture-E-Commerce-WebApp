@@ -63,6 +63,20 @@ function ShopPage() {
   const [previewItem, setPreviewItem] = useState(null)
 
   useEffect(() => {
+  document.title = "Shop Furniture in Tanzania | BigSofa Tanzania";
+
+  const canonical = document.createElement("link");
+  canonical.rel = "canonical";
+  canonical.href = "https://bigsofatanzania.com/shop";
+  document.head.appendChild(canonical);
+
+  return () => {
+    document.head.removeChild(canonical);
+  };
+}, []);
+
+
+  useEffect(() => {
     function handleKeyDown(event) {
       if (event.key === 'Escape') {
         setPreviewItem(null)
