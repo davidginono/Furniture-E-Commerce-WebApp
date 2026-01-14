@@ -13,7 +13,10 @@ function GalleryPage({ token, onLogout }) {
   const navigate = useNavigate()
 
   const authHeaders = useMemo(() => (token ? { 'X-Admin-Token': token } : {}), [token])
-
+  const apiBaseUrl = useMemo(
+    () => (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, ''),
+    [],
+  )
   const loadItems = useCallback(async () => {
     if (!token) {
       return
@@ -73,7 +76,11 @@ function GalleryPage({ token, onLogout }) {
                   <Col xs={24} sm={12} lg={8} key={item.id}>
                     <Card className="gallery__item-card" hoverable>
                       <div className="gallery__image-wrapper">
-                        <Image src={item.imageUrl} alt={item.name} preview />
+                        <Image
+                          src={`${apiBaseUrl}${item.imageUrl}`}
+                          alt={item.name}
+                          preview
+                        />
                       </div>
                       <div className="gallery__item-body">
                         <Flex justify="space-between" align="center">
