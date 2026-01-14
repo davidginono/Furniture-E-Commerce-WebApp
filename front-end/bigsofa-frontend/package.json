@@ -37,4 +37,11 @@
     "vite": "^7.1.7",
     "vitest": "^2.1.4"
   }
+  {
+  "scripts": {
+    "prebuild": "node scripts/generate-sitemap.js",
+    "build": "vite build"
+  }
+}
+
 }
