@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import './BedroomPage.css'
 
 const heroImage = 'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=2000'
@@ -42,6 +43,23 @@ const suites = [
 function BedroomPage() {
   return (
     <div className="bedroom">
+      <Helmet>
+        <title>Bedroom Furniture | BigSofa Tanzania</title>
+        <meta
+          name="description"
+          content="Beds, nightstands, dressers, and bedroom essentials handcrafted in Tanzania."
+        />
+        <meta
+          name="keywords"
+          content="bedroom furniture Tanzania, beds, nightstands, dressers, wardrobes, bedroom storage"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/bedroom" />
+      </Helmet>
       <section className="bedroom__hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="bedroom__hero-overlay">
           <span className="bedroom__eyebrow">Bigsofa Tanzania</span>

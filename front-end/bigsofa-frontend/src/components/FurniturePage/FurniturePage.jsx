@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import './FurniturePage.css'
 
 const heroImage =
@@ -47,6 +48,23 @@ function FurniturePage() {
 
   return (
     <div className="furniture">
+      <Helmet>
+        <title>Furniture Collections | BigSofa Tanzania</title>
+        <meta
+          name="description"
+          content="Explore living room, dining, bedroom, and office furniture collections crafted in Tanzania."
+        />
+        <meta
+          name="keywords"
+          content="furniture collections, living room furniture, dining furniture, bedroom furniture, office furniture, Tanzania furniture"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/furniture" />
+      </Helmet>
       <section className="furniture__hero" style={{ backgroundImage: `url(${heroImage})` }} id="overview">
         <div className="furniture__hero-overlay">
           <span className="furniture__eyebrow">Bigsofa Tanzania</span>

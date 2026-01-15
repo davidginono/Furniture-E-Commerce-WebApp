@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './OfficePage.css'
 
 const heroImage = 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80'
@@ -43,6 +44,23 @@ function OfficePage() {
 
   return (
     <div className="office">
+      <Helmet>
+        <title>Office Furniture | BigSofa Tanzania</title>
+        <meta
+          name="description"
+          content="Office desks, seating, and storage solutions for workspaces in Tanzania."
+        />
+        <meta
+          name="keywords"
+          content="office furniture Tanzania, desks, task chairs, conference tables, office storage, workspace design"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/office" />
+      </Helmet>
       <section className="office__hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="office__hero-overlay">
           <span className="office__eyebrow">Bigsofa Tanzania</span>

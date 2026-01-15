@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Col, Flex, Row, Space, Tag, Typography } from 'antd'
 import { ClockCircleOutlined, InstagramOutlined, MailOutlined, PhoneOutlined, PushpinOutlined, SmileOutlined } from '@ant-design/icons'
+import { Helmet } from 'react-helmet-async'
 import './ContactPage.css'
 
 const { Title, Text, Paragraph } = Typography
@@ -12,6 +13,23 @@ const hours = [
 function ContactPage() {
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact BigSofa Tanzania | Showroom & Support</title>
+        <meta
+          name="description"
+          content="Contact BigSofa Tanzania for orders, showroom visits, and design consultations."
+        />
+        <meta
+          name="keywords"
+          content="contact BigSofa Tanzania, showroom contact, furniture Tanzania contact, design consultation"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/contact" />
+      </Helmet>
       <section className="contact-page__hero">
         <div className="contact-page__hero-content">
           <Tag color="gold" className="contact-page__hero-tag">We’re here for you</Tag>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import './HomePage.css'
 
 import heroImage from '../../assets/home-hero.jpg'
@@ -82,6 +83,23 @@ function HomePage() {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>BigSofa Tanzania | Bespoke Furniture & Interiors</title>
+        <meta
+          name="description"
+          content="Bespoke furniture, interiors, and showroom experiences handcrafted in Tanzania."
+        />
+        <meta
+          name="keywords"
+          content="BigSofa Tanzania, furniture Tanzania, bespoke furniture, interiors, showroom, custom furniture, home furniture, office furniture"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/" />
+      </Helmet>
       <section
         ref={heroRef}
         className="home__hero home__layer home__fade"
@@ -133,7 +151,7 @@ function HomePage() {
 
       <section className="home__about-wrapper home__layer home__fade" id="about">
         <div className="home__about-viewport">
-          <AboutPage />
+          <AboutPage includeHelmet={false} />
         </div>
       </section>
     </div>

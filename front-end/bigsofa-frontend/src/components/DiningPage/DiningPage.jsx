@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './DiningPage.css'
 
 const heroImage = 'https://lh3.googleusercontent.com/p/AF1QipOkUO4o8AuoymTXbK8-JJ3Fei1rIhCyWV_mvh1f=s1360-w1360-h1020-rw'
@@ -67,6 +68,23 @@ function DiningPage() {
 
   return (
     <div className="dining">
+      <Helmet>
+        <title>Dining Room Furniture | BigSofa Tanzania</title>
+        <meta
+          name="description"
+          content="Shop dining tables, seating, and storage crafted for Tanzanian homes."
+        />
+        <meta
+          name="keywords"
+          content="dining room furniture Tanzania, dining tables, dining chairs, sideboards, bar cabinets"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/dining" />
+      </Helmet>
       <section
         ref={heroRef}
         className="dining__hero dining__hero--parallax"

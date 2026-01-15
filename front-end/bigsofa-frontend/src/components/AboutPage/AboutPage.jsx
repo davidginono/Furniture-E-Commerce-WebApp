@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './AboutPage.css'
 
-function AboutPage() {
+function AboutPage({ includeHelmet = true }) {
   useEffect(() => {
     const animatedSections = document.querySelectorAll('.about-page__fade')
     if (!animatedSections.length) {
@@ -34,6 +35,25 @@ function AboutPage() {
 
   return (
     <div className="about-page">
+      {includeHelmet && (
+        <Helmet>
+          <title>About BigSofa Tanzania | Craftsmanship & Design</title>
+          <meta
+            name="description"
+            content="Learn about BigSofa Tanzania, our mission, craftsmanship, and bespoke furniture services."
+          />
+          <meta
+            name="keywords"
+            content="about BigSofa Tanzania, furniture craftsmanship, custom furniture Tanzania, design studio, bespoke furniture"
+          />
+          <meta name="author" content="BigSofa Tanzania" />
+          <meta name="robots" content="index, follow" />
+          <meta name="googlebot" content="index, follow" />
+          <meta name="bingbot" content="index, follow" />
+          <meta name="yandexbot" content="index, follow" />
+          <link rel="canonical" href="https://bigsofatanzania.com/about" />
+        </Helmet>
+      )}
       <section className="about-page__hero about-page__fade">
         <div className="about-page__overlay">
           <span className="about-page__eyebrow">Our Story</span>

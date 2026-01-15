@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './InteriorsPage.css'
 
 const heroImage = 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1600'
@@ -46,6 +47,23 @@ function InteriorsPage() {
 
   return (
     <div className="interiors">
+      <Helmet>
+        <title>Interior Design Services | BigSofa Tanzania</title>
+        <meta
+          name="description"
+          content="Interior design and styling services for homes and businesses across Tanzania."
+        />
+        <meta
+          name="keywords"
+          content="interior design Tanzania, styling, space planning, bespoke interiors, design services, BigSofa interiors"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/interiors" />
+      </Helmet>
       <section className="interiors__hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="interiors__hero-overlay">
           <span className="interiors__eyebrow">Bigsofa Tanzania</span>

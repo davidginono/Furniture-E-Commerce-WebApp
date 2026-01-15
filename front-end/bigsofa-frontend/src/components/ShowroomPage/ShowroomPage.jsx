@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import heroImage from './assets/hero.jpeg'
 import './ShowroomPage.css'
 
@@ -81,6 +82,23 @@ function ShowroomPage() {
 
   return (
     <div className="showroom">
+      <Helmet>
+        <title>Visit Our Showroom | BigSofa Tanzania</title>
+        <meta
+          name="description"
+          content="Plan a visit to the BigSofa Tanzania showroom in Arusha and explore curated furniture displays."
+        />
+        <meta
+          name="keywords"
+          content="showroom Tanzania, Arusha furniture showroom, BigSofa showroom, furniture display, furniture in person"
+        />
+        <meta name="author" content="BigSofa Tanzania" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <link rel="canonical" href="https://bigsofatanzania.com/showroom" />
+      </Helmet>
       <section className="showroom__hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="showroom__hero-overlay">
           <span className="showroom__eyebrow">Visit Us</span>
