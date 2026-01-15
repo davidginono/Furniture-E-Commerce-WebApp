@@ -5,7 +5,7 @@ import { HeartOutlined, HeartFilled, ShoppingCartOutlined } from '@ant-design/ic
 import PropTypes from 'prop-types'
 import './ShopPage.css'
 import { API_BASE_URL } from '../../config'
-
+import { Helmet } from 'react-helmet-async'
 const { Title } = Typography
 
 function ProductImage({ src, alt, fallback }) {
@@ -191,6 +191,18 @@ function ShopPage() {
   }
 
   return (
+   <>
+   <Helmet>
+    <title>Shop Furniture in Tanzania | BigSofa Tanzania</title>
+    <meta name="description" content="Buy quality furniture in Tanzania. Bespoke furniture delivered nationwide." />
+    <meta name="keywords" content="furniture, Tanzania, BigSofa, furniture shop, furniture store, furniture online, furniture for sale, furniture for home, furniture for office, furniture for living room, furniture for bedroom, furniture for dining room, furniture for kitchen, furniture for bathroom" />
+    <meta name="author" content="BigSofa Tanzania" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="yandexbot" content="index, follow" />
+    <link rel="canonical" href="https://bigsofatanzania.com/shop" />
+   </Helmet>
     <div className="shop-page">
       <div className="shop-page__search">
         <Input.Search
@@ -327,6 +339,7 @@ function ShopPage() {
         </div>
       )}
     </div>
+   </> 
   )
 }
 
