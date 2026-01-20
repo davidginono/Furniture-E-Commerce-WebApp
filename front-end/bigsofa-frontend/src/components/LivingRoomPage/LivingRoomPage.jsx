@@ -26,7 +26,7 @@ const vignettes = [
   {
     name: 'Sofas & Sectionals',
     blurb: 'Modular seating, chaise lounges, and compact sofas tailored to both apartments and villas.',
-    image: 'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://www.amazon.com/Sectional-Couches-L-Shaped-Boneless-Sectionals/dp/B0G2Q33X84/r?tag=georiot-us-default-20&ascsubtag=homesandgardens-tz-5148385589826579192-20&geniuslink=true#',
   },
   {
     name: 'Accent Seating',
